@@ -1,0 +1,2 @@
+rootProject.name = "FOX CODES"
+include ':app'

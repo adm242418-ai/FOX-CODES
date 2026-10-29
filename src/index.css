@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #08070d;
+    --bg-secondary: #0f0d19;
+    --bg-card: #141122;
+    --border-color: rgba(168, 85, 247, 0.2);
+    --neon-purple: #a855f7;
+    --neon-glow: rgba(168, 85, 247, 0.35);
+  }
+
+  .theme-light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-color: rgba(147, 51, 234, 0.15);
+    --neon-purple: #9333ea;
+    --neon-glow: rgba(147, 51, 234, 0.15);
+    color: #0f172a;
+  }
+}
+
+/* Custom glowing borders & shadows */
+.neon-border {
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+.neon-border-active {
+  border: 1px solid rgba(192, 132, 252, 0.8);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.35), inset 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+.neon-text-glow {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+.glass-panel {
+  background: rgba(18, 14, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(147, 51, 234, 0.12);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09070f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e1d4d;
+  border-radius: 9999px;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7e22ce;
+}

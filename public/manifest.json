@@ -1,0 +1,19 @@
+{
+  "name": "FOX CODES",
+  "short_name": "FOX CODES",
+  "description": "متجر الأكواد الرقمية الفاخر والتفعيلات الفورية",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#08070d",
+  "theme_color": "#08070d",
+  "icons": [
+    {
+      "src": "/app-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "productivity", "utilities"]
+}

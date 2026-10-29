@@ -1,0 +1,6 @@
+{
+  "name": "FOX CODES — متجر الأكواد الرقمية الفاخر",
+  "description": "متجر FOX CODES الاحترافي لبيع المنتجات الرقمية والأكواد، بتصميم أسود وبنفسجي نيون ولوحة تحكم متكاملة ونظام مخزون فوري.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

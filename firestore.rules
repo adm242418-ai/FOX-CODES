@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 64 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidSystemSetting(data) {
+      return data.keys().hasAll(['maintenance_mode', 'updated_at']) &&
+             data.keys().hasOnly(['maintenance_mode', 'maintenance_message', 'updated_at', 'updated_by']) &&
+             data.maintenance_mode is bool &&
+             data.updated_at is string && data.updated_at.size() <= 64 &&
+             (!('maintenance_message' in data) || (data.maintenance_message is string && data.maintenance_message.size() <= 500)) &&
+             (!('updated_by' in data) || (data.updated_by is string && data.updated_by.size() <= 128));
+    }
+
+    // System settings & maintenance mode
+    match /system_settings/{settingId} {
+      allow read: if isValidId(settingId);
+      allow write: if isValidId(settingId) && isValidSystemSetting(request.resource.data);
+    }
+  }
+}
